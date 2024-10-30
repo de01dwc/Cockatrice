@@ -31,6 +31,10 @@ public:
     {
         int years = now.addDays(1 - then.dayOfYear()).year() - then.year(); // there is no yearsTo
         int days = then.addYears(years).daysTo(now);
+        if (now < then)
+        {
+            days = 365 - days;
+        }
         return {days, years};
     }
 private slots:
