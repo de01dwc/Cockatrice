@@ -33,7 +33,7 @@ public:
         int days = then.addYears(years).daysTo(now);
         if (now < then)
         {
-            days = 365 - days;
+            days = -(365 - days);
         }
         return {days, years};
     }
